@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SplashScreen } from '@capacitor/splash-screen';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +13,8 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   async ngOnInit() {
+    timer(2000).subscribe(() => {
+      SplashScreen.hide()
+    })
   }
 }
